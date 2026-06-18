@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibreriaOnline</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LibreriaOnline</h1>
+            <div class="user-actions">
+                <button id="loginBtn">Login</button>
+                <button id="cartBtn" aria-label="Carrito de compras">
+                    <span class="cart-icon">🛒</span>
+                    <span id="cartCount" class="cart-badge">0</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Iniciar sesión</h2>
+                <form id="loginForm">
+                    <input type="text" id="username" placeholder="Usuario" required>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                    <button type="submit">Entrar</button>
+                </form>
+                <p id="loginError" class="error"></p>
+            </div>
+        </div>
+
+        <!-- Cart Modal -->
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Tu carrito</h2>
+                <div id="cartItems"></div>
+                <div class="cart-footer">
+                    <p>Total: <span id="cartTotal">$0.00</span></p>
+                    <button id="checkoutBtn">Proceder al pago</button>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <section class="books-section">
+                <h2>Libros destacados</h2>
+                <div id="booksGrid" class="books-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
