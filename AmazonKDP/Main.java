@@ -1,5 +1,5 @@
 import javax.swing.*;
-
+//hola
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
@@ -8,6 +8,7 @@ public class Main {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            System.out.println("Realizado");
             new LoginFrame().setVisible(true);
         });
     }
