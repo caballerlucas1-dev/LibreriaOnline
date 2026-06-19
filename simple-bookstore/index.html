@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LibreriaOnline</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div class="container">
@@ -23,13 +24,24 @@
         <div id="loginModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h2>Iniciar sesión</h2>
-                <form id="loginForm">
-                    <input type="text" id="username" placeholder="Usuario" required>
-                    <input type="password" id="password" placeholder="Contraseña" required>
-                    <button type="submit">Entrar</button>
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Iniciar sesión</button>
+                    <button class="tab-btn" data-tab="register">Registrarse</button>
+                </div>
+                <form id="authForm">
+                    <div id="login-panel" class="auth-panel active">
+                        <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
+                        <input type="password" id="loginPassword" placeholder="Contraseña" required>
+                        <button type="submit">Entrar</button>
+                    </div>
+                    <div id="register-panel" class="auth-panel">
+                        <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
+                        <input type="password" id="registerPassword" placeholder="Contraseña" required>
+                        <input type="text" id="registerUsername" placeholder="Nombre de usuario" required>
+                        <button type="submit">Registrarse</button>
+                    </div>
                 </form>
-                <p id="loginError" class="error"></p>
+                <p id="authError" class="error"></p>
             </div>
         </div>
 
