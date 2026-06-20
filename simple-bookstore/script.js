@@ -30,6 +30,7 @@ let booksGrid;
 
 document.addEventListener('DOMContentLoaded', async () => {
 
+
     // Elements
     loginBtn = document.getElementById('loginBtn');
     loginModal = document.getElementById('loginModal');
@@ -170,6 +171,7 @@ function closeLoginModal() {
 }
 
 async function handleAuthSubmit(e) {
+    console.log('handleAuthSubmit called');
     e.preventDefault();
     if (!window.libreriaSupabase) {
         authError.textContent = 'Servicio de autenticación no disponible. Por favor recarga la página.';
