@@ -1,21 +1,24 @@
+/* CSS Variables - Define color palette and design tokens for consistent theming */
 :root {
-    --bg-dark: #121212;
-    --bg-surface: #1e1e1e;
-    --bg-card: #252525;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --accent: #bb86fc;
-    --accent-hover: #9d5cff;
-    --border-radius: 8px;
-    --transition: 0.3s ease;
+    --bg-dark: #000000;           /* Main background color */
+    --bg-surface: #1e1e1e;        /* Surface elevation for cards/modals */
+    --bg-card: #252525;           /* Card background */
+    --text-primary: #ffffff;      /* Primary text color */
+    --text-secondary: #b0b0b0;    /* Secondary/muted text */
+    --accent: #bb86fc;            /* Accent color (purple) */
+    --accent-hover: #9d5cff;      /* Accent color on hover */
+    --border-radius: 8px;         /* Standard border radius */
+    --transition: 0.3s ease;      /* Standard transition duration */
 }
 
+/* Global Reset - Remove default margins/padding and set box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styles - Base typography and background */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-dark);
@@ -39,7 +42,7 @@ header {
 
 header h1 {
     font-size: 1.8rem;
-    background: linear-gradient(to right, var(--accent), #ffb74d);
+    background: linear-gradient(to right, var(--accent), #9d5cff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -314,6 +317,7 @@ button[type="submit"]:hover {
     color: #ff5252;
 }
 
+/* Checkout Button - Full width primary action */
 #checkoutBtn {
     width: 100%;
     padding: 0.75rem;
@@ -328,53 +332,55 @@ button[type="submit"]:hover {
 }
 
 #checkoutBtn:hover {
-    background-color: var(--accent-hover);
+    background-color: var(--accent-hover); /* Darker accent on hover */
 }
 
+/* Responsive Breakpoints - Tablets and smaller screens */
 @media (max-width: 768px) {
     .container {
-        padding: 0.5rem;
+        padding: 0.5rem; /* Reduced padding on smaller screens */
     }
 
     header {
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Allow wrapping on small screens */
         gap: 1rem;
     }
 
     .user-actions {
-        order: -1;
-        width: 100%;
-        justify-content: flex-end;
+        order: -1; /* Move to top */
+        width: 100%; /* Full width */
+        justify-content: flex-end; /* Right-align buttons */
     }
 
     .books-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller cards */
     }
 
     .book-cover {
-        height: 220px;
+        height: 220px; /* Reduced cover height */
     }
 }
 
+/* Responsive Breakpoints - Mobile phones */
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Smaller logo */
     }
 
     .books-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column */
     }
 
     .book-card {
-        min-height: 380px;
+        min-height: 380px; /* Minimum card height */
     }
 }
 
-/* Auth tabs */
+/* Auth Tabs - Login/Register switcher */
 .auth-tabs {
     display: flex;
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #444; /* Underline separator */
 }
 .tab-btn {
     background: none;
@@ -383,26 +389,28 @@ button[type="submit"]:hover {
     padding: 0.5rem 1rem;
     cursor: pointer;
     font-size: 1rem;
-    position: relative;
+    position: relative; /* For underline effect */
 }
 .tab-btn.active {
-    color: var(--accent);
+    color: var(--accent); /* Accent color when active */
 }
 .tab-btn.active::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -1px; /* Just below button */
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--accent);
+    background-color: var(--accent); /* Accent underline */
 }
+/* Auth Panel - Hide/show login/register forms */
 .auth-panel {
     display: none;
 }
 .auth-panel.active {
     display: block;
 }
+/* Input Box Sizing - Include padding/border in width */
 input {
     width: 100%;
     box-sizing: border-box;
